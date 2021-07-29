@@ -78,23 +78,30 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function multiCase(a,b,c){
-  if(a == null && b == null && c == null){
-    return false;
-  }
-  
-  if(b == null && c == null){
-    return a;
-  }else if(a == null && c == null){
-    return b;
-  }else if(a == null && b == null){
-    return c;
-  }
-  
-  if(a == null && b != null && c!= null){
-    return b+c;
-  }
+  if(a == null && b == null && c == null)
+    return false
+  else if(a != null && b != null && c == null)
+    return (a+b)
+  else if(a != null && b == null && c != null)
+    return (a+c)
+  else if(a == null && b != null && c == null)
+    return (b+c)
+  else if(a != null && b != null && c == null)
+    return c
+  else if(a == null && b != null && c == null)
+    return b
+  else if(a != null && b == null && c == null)
+    return a
+  else if(a != null && b != null && c != null)
+    return (a+b)/c
+  else
+    return null
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
-```
+
+multiCase(5) //5
+multiCase(5,4) //9
+multiCase(5,4,2) //4.5
+multiCase() //false
